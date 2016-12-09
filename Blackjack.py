@@ -117,20 +117,6 @@ def hit():
                 print("YOU LOSE!!!!")
                 new_game_not()
 
-
-
-
-
-
-
-
-def winner():
-
-    if player_hand.get_value() > dealer_hand.get_value():
-        print("PLAYER 1 WINS")
-    else:
-        print("PLAYER 1 LOSE IDIOT")
-
 def deal():
 
     global player_hand #allows these variables to be called in hit function
@@ -156,16 +142,7 @@ def deal():
 
     hit()
 
-    #winner()
 
-
-
-
-
-
-#x = Deck()
-
-#print(x.deal_card())
 print(deal())
 
 
