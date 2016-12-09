@@ -76,35 +76,48 @@ class Deck:
 
 def hit():
 
+    def new_game_not():
+        new_game = input(print("do you want to play again? y/n"))
+        if new_game == 'y':
+            deal()
+
+    def show_player_hand():
+        print("Player 1: %s" % player_hand)
+        print("The value of player 1's hand is: %s" % player_hand.get_value())
+
+    def show_dealer_hand():
+        print("Dealer: %s" % dealer_hand)
+        print("The value of dealer's hand is: %s" % dealer_hand.get_value())
+
     c = 'y'
 
+    while dealer_hand.get_value() < 17:
+        dealer_hand.add_card(deck.deal_card())
+        #show_dealer_hand()
+
     while c != 'q':
-     #   print("Player 1: %s" % player_hand)
-
-      #  print("The value of player 1's hand is: %s" % player_hand.get_value())
-
-       # print("Player 1: %s" % dealer_hand)
-        #print("The value of dealer 1's hand is: %s" % dealer_hand.get_value())
 
         c = input(print("Does Player 1  want to hit? y/n"))
 
+
         if c == 'y':
             player_hand.add_card(deck.deal_card())
-            print("Player 1: %s" % player_hand)
-            print("The value of player 1's hand is: %s" % player_hand.get_value())
+            show_player_hand()
 
             if player_hand.get_value() > 21:
                 print("BUST!")
-                new_game = input(print("do you want to play again? y/n"))
-                if new_game == 'y':
-                    deal()
+                new_game_not()
         elif c == 'n':
-            print("Player 1: %s" % player_hand)
-            print("The value of player 1's hand is: %s" % player_hand.get_value())
+            show_player_hand()
+            show_dealer_hand()
             if player_hand.get_value() > dealer_hand.get_value():
                 print("YOU WIN!!!!!!")
+                new_game_not()
             else:
                 print("YOU LOSE!!!!")
+                new_game_not()
+
+
 
 
 
