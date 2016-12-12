@@ -1,4 +1,6 @@
 import random
+import sys
+
 CARDS = ('1','2','3','4','5','6','7','8','9','10','10','10','10')
 SUIT = ('S','H','C','D')
 RANK = {'A':1, '2':2, '3': 3, '4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'J':10,'Q':10,'K':10}
@@ -80,6 +82,8 @@ def hit():
         new_game = input(print("do you want to play again? y/n"))
         if new_game == 'y':
             deal()
+        else:
+            sys.exit()
 
     def show_player_hand():
         print("Player 1: %s" % player_hand)
@@ -93,7 +97,10 @@ def hit():
 
     while dealer_hand.get_value() < 17:
         dealer_hand.add_card(deck.deal_card())
-        #show_dealer_hand()
+        if dealer_hand.get_value() > 21:
+            print("You win! Dealer Busts!")
+            show_dealer_hand()
+            new_game_not()
 
     while c != 'q':
 
@@ -105,7 +112,7 @@ def hit():
             show_player_hand()
 
             if player_hand.get_value() > 21:
-                print("BUST!")
+                print("BUST! You Lose man")
                 new_game_not()
         elif c == 'n':
             show_player_hand()
@@ -113,9 +120,13 @@ def hit():
             if player_hand.get_value() > dealer_hand.get_value():
                 print("YOU WIN!!!!!!")
                 new_game_not()
+            elif player_hand.get_value() == dealer_hand.get_value():
+                print("It's a tie!")
+                new_game_not()
             else:
                 print("YOU LOSE!!!!")
                 new_game_not()
+
 
 def deal():
 
