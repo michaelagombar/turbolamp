@@ -9,7 +9,6 @@ import time
 request = ('http://api.openweathermap.org/data/2.5/weather?q=Chicago&appid=9b56b06ab4c7f06821ccf55e3e10fce5')
 
 response = urllib2.urlopen(request)
-#data = response.read()
 
 str_response = response.read().decode('utf-8')
 obj = json.loads(str_response)
