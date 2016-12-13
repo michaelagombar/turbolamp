@@ -17,9 +17,9 @@ sunset = obj['sys']['sunset']
 sunset_time = time.strftime('%H:%M:%SPM', time.localtime(sunset))
 
 cur_time = time.strftime('%H:%M:%SPM', time.localtime())
-cur_time1 = time.strftime('%H:%M:%SPM', time.localtime())
+#cur_time1 = time.strftime('%H:%M:%SPM', time.localtime())
 
-if cur_time == cur_time1:
+if cur_time == sunset_time:
     from twilio.rest import TwilioRestClient
 
     account = "ACe1b4216246d4bfa4e46b97fcf1b747f4"
