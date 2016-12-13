@@ -1,9 +1,13 @@
 import random
 import sys
 
+
 CARDS = ('1','2','3','4','5','6','7','8','9','10','10','10','10')
 SUIT = ('S','H','C','D')
 RANK = {'A':1, '2':2, '3': 3, '4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'J':10,'Q':10,'K':10}
+
+yes = 'y'
+no = 'n'
 
 class Card:
     def __init__(self, suit, rank):
@@ -79,8 +83,8 @@ class Deck:
 def hit():
 
     def new_game_not():
-        new_game = input(print("do you want to play again? y/n"))
-        if new_game == 'y':
+        new_game = input("do you want to play again? y/n")
+        if new_game == str('y'):
             deal()
         else:
             sys.exit()
@@ -104,7 +108,7 @@ def hit():
 
     while c != 'q':
 
-        c = input(print("Does Player 1  want to hit? y/n"))
+        c = input("Does Player 1  want to hit? y/n")
 
 
         if c == 'y':
@@ -154,6 +158,6 @@ def deal():
     hit()
 
 
-print(deal())
+deal()
 
 
