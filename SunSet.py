@@ -18,7 +18,6 @@ sunset_time = time.strftime('%H:%M', time.localtime(sunset))
 cur_time = time.strftime('%H:%M', time.localtime())
 cur_time2 = time.strftime('%H:%M', time.localtime())
 
-#if cur_time == cur_time2:
 if cur_time == sunset_time:
     from twilio.rest import TwilioRestClient #cool
 
@@ -26,10 +25,8 @@ if cur_time == sunset_time:
     token = "445ec508c12eac63a09818fcd1034d7c"
     client = TwilioRestClient(account, token)
 
-    message = client.messages.create(from_="+1(847) 380 - 8591", to="+18474712449",
+    message = client.messages.create(from_="+1(847) 380 - 8591", to="+xxxxxxxx",
                                      body="The Sun is Setting and the time is {}".format(sunset_time))
 
-#print("Sunset Time = " + sunset_time)
-#print("Current Time = " + cur_time)
 
 
