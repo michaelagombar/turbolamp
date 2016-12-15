@@ -18,6 +18,7 @@ sunset_time = time.strftime('%H:%M', time.localtime(sunset))
 cur_time = time.strftime('%H:%M', time.localtime())
 cur_time2 = time.strftime('%H:%M', time.localtime())
 
+#if cur_time == cur_time2:
 if cur_time == sunset_time:
     from twilio.rest import TwilioRestClient #cool
 
