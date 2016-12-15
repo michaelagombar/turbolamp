@@ -1,19 +1,18 @@
 from random import randint
 import sys
-#import Python
 
 player_win_count = 0
 computer_win_count = 0
 
+def play():
 
-
-def play(player_win_count, computer_win_count):
+    global player_win_count
+    global computer_win_count
 
     dec = randint(1, 3)
     user_choice = input("Do you want (p)aper, (r)ock, or (s)cissors?")
 
-    #player_win_count  = 0  #here is my issues. I do not know where to initialize these
-    #computer_win_count = 0  #but when I call play(), it resets these back to 0
+
 
     if user_choice == 'r':
 
@@ -75,11 +74,11 @@ def score(player_win_count, computer_win_count):
 def play_again(): #this could be an issue moving forward, as I believe there could be a recursion overload.
     choice = input("Do you want to play again? y/n")
     if choice == 'y':
-        play(player_win_count, computer_win_count)
+        play()
     else:
-        print("OK!")
+        print("OK! The final score was\n Player: {} to Computer: {}".format(player_win_count, computer_win_count))
         sys.exit()
 
 
 
-play(0,0)
+play()
