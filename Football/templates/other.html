@@ -1,0 +1,26 @@
+<html>
+<head>
+
+<table style="width:75%;background-color: #F0FFFF; border-collapse: collapse; border: 1px solid black;
+    padding: 100px; opacity: .9", border="1">
+
+</head>
+    <th align="left">Position</th>
+    <th align="left">Club</th>
+    <th align="left">Points</th>
+    <th align="left">Games Played</th>
+    <th align="left">Goals For</th>
+    <th align="left">Goals Against</th>
+
+    {% for team, score, game, goals, goals_a in data %}
+    <tr>
+    <td><strong>{{loop.index}}</strong></td>
+    <td>{{team}}</td>
+    <td><emph> {{score}}</emph> <br/></td>
+    <td>{{game}}</td>
+    <td>{{goals}}</td>
+    <td>{{goals_a}}</td>
+    {% endfor %}
+    </tr>
+</table>
+</html>
